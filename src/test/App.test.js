@@ -1,16 +1,12 @@
-import React from 'react';
-import './setupTests';
-
-import { shallow } from 'enzyme';
-
 import App from '../App';
 
 describe('App', () => {
-  let component, form, nameInput;
-  const fakeEvent = { preventDefault: () => console.log('preventDefault') };
+  let component, instance, form, nameInput;
+  const fakeEvent = { preventDefault: () => "do nothing" };
 
   beforeEach(() => {
     component = shallow(<App />);
+    instance = component.instance();
     form = component.find('form');
     nameInput = component.find('#nameInput');
   });
@@ -38,5 +34,14 @@ describe('App', () => {
     nameInput.simulate("change", {target: {name: "nameInput", value: "Beth"}})
     form.simulate("submit", fakeEvent);
     expect(component.find('#nameInput').props().value).toBe("");
+  });
+
+  test("clicking on a story triggers a handleStorySelect function", () => {
+    component.setState({ stories: [ { id: 2503, headline: 'Disaster Strikes', snippet: 'It was a dark and stormy night...'} ] });
+    const story1 = component.find('li').first();
+    const handleStorySelect = sinon.spy(instance, 'handleStorySelect');
+    story1.simulate('click');
+    expect(handleStorySelect.calledOnce).toBe(true);
+    expect(handleStorySelect.calledWith(2503)).toBe(true);
   });
 });

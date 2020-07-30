@@ -13,9 +13,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --setupFiles ./src/test/setupTests.js",
     "eject": "react-scripts eject",
-    "coverage": "react-scripts test --coverage --watchAll=false"
+    "coverage": "react-scripts test --setupFiles ./src/test/setupTests.js --coverage --watchAll=false"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.2"
+    "enzyme-adapter-react-16": "^1.15.2",
+    "sinon": "^9.0.2"
   }
 }
