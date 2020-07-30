@@ -28,10 +28,10 @@ class App extends Component {
 
   handleFormSubmit = e => {
     e.preventDefault();
-    this.setState({ 
-      username: e.target.nameInput.value,
+    this.setState(prevState => ({ 
+      username: prevState.nameInput,
       nameInput: ""
-    });
+    }));
   };
 
   render(){
@@ -44,11 +44,11 @@ class App extends Component {
 
         <aside>
           {/* Conditional rendering example 1 */}
-          <h3>Hi there, {this.state.username ? this.state.username : 'friend'}!</h3>
+          <h3 id="greeting">Hi there, {this.state.username ? this.state.username : 'friend'}!</h3>
 
           {/* Form handling */}
           <form onSubmit={this.handleFormSubmit}>
-            <input type="text" name="nameInput" placeholder="That's not my name!" value={this.state.nameInput} onChange={this.handleInput}/>
+            <input type="text" id="nameInput" name="nameInput" placeholder="That's not my name!" value={this.state.nameInput} onChange={this.handleInput}/>
             <input type="submit" value="Update!"/>
           </form>
 
