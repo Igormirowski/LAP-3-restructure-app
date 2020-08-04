@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FaveButton from './FaveButton';
 import './App.css';
 
 class App extends Component {
@@ -36,7 +37,7 @@ class App extends Component {
 
   render(){
     // Pass explicit arguments to event handlers
-    const renderStories = this.state.stories.map(st => <li key={st.id} onClick={() => this.handleStorySelect(st.id)}><strong>{st.headline}</strong> {st.snippet}</li>)
+    const renderStories = this.state.stories.map(st => <li key={st.id} onClick={() => this.handleStorySelect(st.id)}><FaveButton /> <strong>{st.headline}</strong> {st.snippet}</li>)
 
     return(
       <div className="news-reader">
