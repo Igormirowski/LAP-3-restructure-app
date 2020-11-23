@@ -4,9 +4,15 @@
   "description": "[React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch --setupFiles ./src/test/setupTests.js",
     "start": "webpack-cli serve --mode development --config webpack.config.dev.js",
     "build": "webpack -p"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "repository": {
     "type": "git",
