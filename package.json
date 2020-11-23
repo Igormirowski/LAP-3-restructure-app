@@ -4,7 +4,9 @@
   "description": "[React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-cli serve --mode development --config webpack.config.dev.js",
+    "build": "webpack -p"
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,8 @@
   "dependencies": {
     "@babel/core": "^7.12.7",
     "@babel/preset-env": "^7.12.7",
-    "@babel/preset-react": "^7.12.7"
+    "@babel/preset-react": "^7.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   }
 }
