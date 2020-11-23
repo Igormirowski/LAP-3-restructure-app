@@ -11,7 +11,7 @@ class App extends Component {
     stories: [
       { id: 2503, headline: 'Disaster Strikes', snippet: 'It was a dark and stormy night...'},
       { id: 1322, headline: 'Sunny Days Ahead', snippet: 'Even in the UK, beach days are still upon us.'},
-      { id: 5541, headline: 'Beware the Frumious Bandersnatch', snippet: 'Twas brillig, and the slithy toves did fyre and gimble in the wabe.'}
+      { id: 5541, headline: 'Beware the Frumious Bandersnatch', snippet: 'Twas brillig, and the slithy toves did gyre and gimble in the wabe.'}
     ]
   };
 
