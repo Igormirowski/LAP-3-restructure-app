@@ -1,5 +1,5 @@
 ### Study Notes
-[React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing)
+| [React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing) | [TDD in React](https://github.com/getfutureproof/fp_guides_wiki/wiki/TDD-in-React) |
 
 # Exercises
 - Add a 'Like' feature to your music page
