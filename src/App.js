@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import FaveButton from './FaveButton';
+import FaveButton from './components/FaveButton';
 import './App.css';
 
 class App extends Component {
@@ -15,7 +15,7 @@ class App extends Component {
     ]
   };
 
-  increaseReadsCount = () => this.setState(prevState => ({ readsCount: prevState.readsCount++}));
+  increaseReadsCount = () => this.setState(prevState => ({ readsCount: ++prevState.readsCount}));
 
   handleStorySelect = storyId => {
     const chosenStory = this.state.stories.find(st => st.id === storyId);
