@@ -45,4 +45,11 @@ describe('App', () => {
     expect(handleStorySelect.calledOnce).toBe(true);
     expect(handleStorySelect.calledWith(2503)).toBe(true);
   });
+
+  test("increases reader count when 'I\'ve read!' button is clicked", () => {
+    const readButton = component.find('button');
+    const initialReaderCount = component.state('readsCount');
+    readButton.simulate('click');
+    expect(component.state('readsCount')).toBe(initialReaderCount + 1)
+  })
 });
