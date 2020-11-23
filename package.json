@@ -1,0 +1,35 @@
+{
+  "name": "state-and-eventing",
+  "version": "1.0.0",
+  "description": "[React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/getfutureproof/fp_study_notes_react_state_and_eventing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/getfutureproof/fp_study_notes_react_state_and_eventing/issues"
+  },
+  "homepage": "https://github.com/getfutureproof/fp_study_notes_react_state_and_eventing#readme",
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "babel-loader": "^8.2.1",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7"
+  }
+}
