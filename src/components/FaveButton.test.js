@@ -1,4 +1,4 @@
-import FaveButton from '../components/FaveButton';
+import FaveButton from './FaveButton';
 
 describe('FaveButton', () => {
     let component;
