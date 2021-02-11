@@ -1,18 +1,16 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class FaveButton extends Component {
-    state = { faved: false }
+const FaveButton = () => {
+    const [ faved, setFaved ] = useState(false);
 
-    handleFave = e => {
+    const handleFave = e => {
         e.stopPropagation()
-        this.setState(prevState => ({ faved: !prevState.faved }))
+        setFaved(!faved)
     }
 
-    render() {
-        return (
-            <span onClick={this.handleFave} style={{ color: this.state.faved ? 'gold' : 'grey' }}>★</span>
-        );
-    }
+    return (
+        <span onClick={handleFave} style={{ color: faved ? 'gold' : 'grey' }}>★</span>
+    );
 }
 
 export default FaveButton;
