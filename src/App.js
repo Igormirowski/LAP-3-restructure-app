@@ -48,7 +48,7 @@ function App() {
         </form>
 
         {/* Reading from state */}
-        <p>There have been {readsCount} reader(s)!</p>
+        <p>There have been <span id="reads">{readsCount}</span> reader(s)!</p>
 
         {/* Event handling */}
         <button onClick={increaseReadsCount}>I've read!</button>
