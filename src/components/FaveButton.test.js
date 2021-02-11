@@ -12,23 +12,11 @@ describe('FaveButton', () => {
         expect(starSpan.text()).toContain('★')
     })
 
-    test('shows a grey star if the story is not faved', () => {
-        component.setState({ faved: false })
-        let starSpan = component.find('span')
-        expect(starSpan.prop('style')).toHaveProperty('color', 'grey')
-    })
-
-    test('shows a gold star if the story is faved', () => {
-        component.setState({ faved: true })
-        let starSpan = component.find('span')
-        expect(starSpan.prop('style')).toHaveProperty('color', 'gold')
-    })
-
-    test('toggles faved state when clicked', () => {
+    test('changes colour of star when clicked', () => {
         let fakeEvent = { stopPropagation: () => "do nothing" }
         let starSpan = component.find('span')
-        let initFavedState = component.state('faved')
+        let initColour = starSpan.prop('style').color;
         starSpan.simulate('click', fakeEvent)
-        expect(component.state('faved')).toBe(!initFavedState)
+        expect(starSpan.prop('style').color).not.toBe(!initColour)
     })
 })

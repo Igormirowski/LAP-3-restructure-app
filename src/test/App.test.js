@@ -1,13 +1,11 @@
 import App from '../App';
 
 describe('App', () => {
-  let component, instance, form, nameInput;
+  let component, nameInput;
   const fakeEvent = { preventDefault: () => "do nothing" };
 
   beforeEach(() => {
     component = shallow(<App />);
-    instance = component.instance();
-    form = component.find('form');
     nameInput = component.find('#nameInput');
   });
 
@@ -19,37 +17,35 @@ describe('App', () => {
     expect(component.find('#greeting').text()).toBe("Hi there, friend!");
   });
 
-  test("updates state when a user enters input", () => {
-    nameInput.simulate("change", {target: {name: "nameInput", value: "B"}});
-    expect(component.state('nameInput')).toBe('B');
+  test("does not change greeting whilst a user enters input", () => {
+    nameInput.simulate("change", {target: {value: "Beth"}});
+    expect(component.find('#greeting').text()).toBe("Hi there, friend!");
   });
 
-  test("greets a user by name if a username is given", () => {
-    nameInput.simulate("change", {target: {name: "nameInput", value: "Beth"}})
-    form.simulate("submit", fakeEvent);
+  test("greets a user by name when user submits name", () => {
+    nameInput.simulate("change", {target: {value: "Beth"}})
+    component.find('form').simulate("submit", fakeEvent);
     expect(component.find('#greeting').text()).toBe("Hi there, Beth!");
   });
 
   test("clears user input after submission", () => {
-    nameInput.simulate("change", {target: {name: "nameInput", value: "Beth"}})
-    form.simulate("submit", fakeEvent);
+    nameInput.simulate("change", {target: {value: "Beth"}})
+    component.find('form').simulate("submit", fakeEvent);
     expect(component.find('#nameInput').props().value).toBe("");
   });
 
-  test("clicking on a story triggers a handleStorySelect function", () => {
-    component.setState({ stories: [ { id: 2503, headline: 'Disaster Strikes', snippet: 'It was a dark and stormy night...'} ] });
-    const story1 = component.find('li').first();
-
-    const handleStorySelect = sinon.spy(instance, 'handleStorySelect');
-    story1.simulate('click');
-    expect(handleStorySelect.calledOnce).toBe(true);
-    expect(handleStorySelect.calledWith(2503)).toBe(true);
+  test("changes featured story when a story headline is clicked", () => {
+    const firstStory = component.find('li').first();
+    const headline = firstStory.find('strong').text()
+    firstStory.simulate('click');
+    expect(component.find('#feature').text()).toContain(headline);
   });
 
   test("increases reader count when 'I\'ve read!' button is clicked", () => {
     const readButton = component.find('button');
-    const initialReaderCount = component.state('readsCount');
+    const initialReaderCount = component.find('#reads').text();
     readButton.simulate('click');
-    expect(component.state('readsCount')).toBe(initialReaderCount + 1)
+    const newReaderCount = component.find('#reads').text();
+    expect(parseInt(newReaderCount)).toBe(parseInt(initialReaderCount) + 1)
   })
 });
