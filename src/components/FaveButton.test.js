@@ -15,8 +15,9 @@ describe('FaveButton', () => {
     test('changes colour of star when clicked', () => {
         let fakeEvent = { stopPropagation: () => "do nothing" }
         let starSpan = component.find('span')
-        let initColour = starSpan.prop('style').color;
+        let initColour = starSpan.prop('style').color
         starSpan.simulate('click', fakeEvent)
-        expect(starSpan.prop('style').color).not.toBe(!initColour)
+        let clickedColour = component.find('span').prop('style').color
+        expect(clickedColour).not.toBe(initColour)
     })
 })
