@@ -4,7 +4,7 @@
   "description": "[React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing)",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch --setupFiles ./src/test/setupTests.js",
+    "test": "jest --watch --setupFilesAfterEnv ./src/test/setupTests.js",
     "coverage": "jest --setupFiles ./src/test/setupTests.js --coverage --watchAll=false",
     "start": "webpack-cli serve --mode development --config webpack.config.dev.js",
     "build": "webpack -p"
