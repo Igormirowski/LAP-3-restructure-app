@@ -9,7 +9,7 @@ const FaveButton = () => {
     }
 
     return (
-        <span onClick={handleFave} style={{ color: faved ? 'gold' : 'grey' }}>★</span>
+        <span role="switch" onClick={handleFave} style={{ color: faved ? 'gold' : 'grey' }}>★</span>
     );
 }
 
