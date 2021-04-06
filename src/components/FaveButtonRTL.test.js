@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import "@testing-library/jest-dom/extend-expect";
+import userEvent from '@testing-library/user-event';
 
 import FaveButton from './FaveButton';
 
@@ -16,12 +16,11 @@ describe('FaveButton', () => {
         expect(starSpan.textContent).toBe('★')
     })
 
-    // test('changes colour of star when clicked', () => {
-    //     let fakeEvent = { stopPropagation: () => "do nothing" }
-    //     let starSpan = component.find('span')
-    //     let initColour = starSpan.prop('style').color
-    //     starSpan.simulate('click', fakeEvent)
-    //     let clickedColour = component.find('span').prop('style').color
-    //     expect(clickedColour).not.toBe(initColour)
-    // })
+    test('changes colour of star when clicked', () => {
+        let starSpan = component.getByRole("switch")
+        let initColour = starSpan.style.color
+        userEvent.click(starSpan)
+        let clickedColour = starSpan.style.color
+        expect(clickedColour).not.toBe(initColour)
+    })
 })
