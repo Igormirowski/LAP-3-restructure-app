@@ -1,23 +1,19 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { screen } from '@testing-library/react';
 
 import FaveButton from './FaveButton';
 
 describe('FaveButton', () => {
-    let component;
-
     beforeEach(() => {
-        component = render(<FaveButton />)
+        render(<FaveButton />)
     })
 
     test('renders a span with a star (★) in it', () => {
-        let starSpan = component.getByRole("switch")
+        let starSpan = screen.getByRole("switch")
         expect(starSpan.textContent).toBe('★')
     })
 
     test('changes colour of star when clicked', () => {
-        let starSpan = component.getByRole("switch")
+        let starSpan = screen.getByRole("switch")
         let initColour = starSpan.style.color
         userEvent.click(starSpan)
         let clickedColour = starSpan.style.color
