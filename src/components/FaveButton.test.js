@@ -1,23 +1,22 @@
+import { screen } from '@testing-library/react';
+
 import FaveButton from './FaveButton';
 
 describe('FaveButton', () => {
-    let component;
-
     beforeEach(() => {
-        component = shallow(<FaveButton />)
+        render(<FaveButton />)
     })
 
     test('renders a span with a star (★) in it', () => {
-        let starSpan = component.find('span')
-        expect(starSpan.text()).toContain('★')
+        let starSpan = screen.getByRole("switch")
+        expect(starSpan.textContent).toBe('★')
     })
 
     test('changes colour of star when clicked', () => {
-        let fakeEvent = { stopPropagation: () => "do nothing" }
-        let starSpan = component.find('span')
-        let initColour = starSpan.prop('style').color
-        starSpan.simulate('click', fakeEvent)
-        let clickedColour = component.find('span').prop('style').color
+        let starSpan = screen.getByRole("switch")
+        let initColour = starSpan.style.color
+        userEvent.click(starSpan)
+        let clickedColour = starSpan.style.color
         expect(clickedColour).not.toBe(initColour)
     })
 })
