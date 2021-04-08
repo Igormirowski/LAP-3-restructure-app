@@ -13,7 +13,7 @@ function App() {
   ])
   const [ chosenStory, setChosenStory ] = useState();
 
-  const increaseReadsCount = () => setReadsCount(readsCount + 1);
+  const increaseReadsCount = () => setReadsCount(prevState => prevState + 1);
 
   const handleStorySelect = storyId => {
     const chosenStory = stories.find(st => st.id === storyId);
@@ -31,7 +31,7 @@ function App() {
   };
 
   // Pass explicit arguments to event handlers
-  const renderStories = stories.map(st => <li key={st.id} onClick={() => handleStorySelect(st.id)}><FaveButton /> <strong role="heading" aria-label="headline">{st.headline}</strong> {st.snippet}</li>)
+  const renderStories = () => stories.map(st => <li key={st.id} onClick={() => handleStorySelect(st.id)}><FaveButton /> <strong role="heading" aria-label="headline">{st.headline}</strong> {st.snippet}</li>)
 
   return(
     <div className="news-reader">
@@ -59,7 +59,7 @@ function App() {
 
       <section>
         {/* Tidy rendering */}
-        <ul> { renderStories } </ul>
+        <ul> { renderStories() } </ul>
 
         {/* Conditional rendering example 2 */}
         { 
