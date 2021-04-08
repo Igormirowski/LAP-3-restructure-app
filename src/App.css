@@ -41,6 +41,8 @@ img {
 
 h3 { font-size: 2.2rem; }
 
+label { margin-right: 10px; }
+
 input, [type="submit"] { 
     font-family: 'News Cycle',
     sans-serif; background-color: wheat;
