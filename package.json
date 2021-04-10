@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "test": "jest --watch --setupFilesAfterEnv ./src/test/setupTests.js",
-    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --watchAll=false",
+    "test": "jest --watch --verbose --setupFilesAfterEnv ./src/test/setupTests.js",
+    "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false",
     "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js"
   },
@@ -11,13 +11,12 @@
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/getfutureproof/fp_study_notes_react_state_and_eventing.git"
-  },
   "license": "ISC",
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/core": "^7.13.15",
+    "@babel/plugin-transform-runtime": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^13.1.1",
@@ -32,9 +31,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@babel/core": "^7.12.7",
-    "@babel/preset-env": "^7.12.7",
-    "@babel/preset-react": "^7.12.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
