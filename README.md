@@ -1,5 +1,5 @@
 ### Study Notes
-| [React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing-(Functional-Components)) | [Testing in React](https://github.com/getfutureproof/fp_guides_wiki/wiki/Testing-React:-Jest-and-React-Testing-Library) |
+| [React State and Eventing](https://github.com/getfutureproof/fp_guides_wiki/wiki/React-State-and-Eventing-(Functional-Components)) | [Testing React](https://github.com/getfutureproof/fp_guides_wiki/wiki/Testing-React:-Jest-and-React-Testing-Library) |
 
 # Exercises
 - Add a 'Like' feature to your music page
