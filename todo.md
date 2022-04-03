@@ -29,7 +29,7 @@ App
 - [x] add onClick event to 'I've Read' button
 - [x] create `increaseReadsCount` handler that increase `readsCount` state by 1
 - [x] add onClick event to story `li`s
-- [x] create `handleStorySelect` handler that receives story id, finds the chosen story by id and sets it as the `chosenStory` in state
+- [x] create `handleArticleSelect` handler that receives story id, finds the chosen story by id and sets it as the `chosenArticle` in state
 
 FaveButton
 - [x] add onClick event to span

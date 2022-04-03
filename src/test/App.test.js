@@ -40,16 +40,16 @@ describe('App', () => {
   });
 
   test("changes featured story when a story headline is clicked", () => {
-    const firstStory = screen.getAllByRole('listitem')[0];
-    const firstHeadline = within(firstStory).getByRole('heading', { name: "headline" });
-    const secondStory = screen.getAllByRole('listitem')[1];
-    const secondHeadline = within(secondStory).getByRole('heading', { name: "headline" });
+    const firstArticle = screen.getAllByRole('listitem')[0];
+    const firstHeadline = within(firstArticle).getByRole('heading', { name: "headline" });
+    const secondArticle = screen.getAllByRole('listitem')[1];
+    const secondHeadline = within(secondArticle).getByRole('heading', { name: "headline" });
     
-    userEvent.click(firstStory)
+    userEvent.click(firstArticle)
     const article = screen.getByRole('article', { name: 'featured story'})
     expect(article.textContent).toContain(firstHeadline.textContent);
 
-    userEvent.click(secondStory)
+    userEvent.click(secondArticle)
     expect(article.textContent).toContain(secondHeadline.textContent);
   });
 
