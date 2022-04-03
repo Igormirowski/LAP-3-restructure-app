@@ -13,5 +13,6 @@ We recommend that you fork and clone this repo and code along throughout the wee
 ### Branches
 - `starter` => A content-only starting point you can clone down to code along with
 - `state-eventing` => The complete version of the code workshopped in the React State & Eventing live lecture
+- `props-file-structure` => The complete version of the code workshopped in the React Props & File Structure live lecture
 - `nav-rrv6` => The complete version of the code workshopped in the React Navigation live lecture
 - `useEffect-rrv6` => The complete version of the code workshopped in the React useEffect live lecture
