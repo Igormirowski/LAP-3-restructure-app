@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import { FaveButton } from '../../components';
+import { FaveButton, ReadCount } from '../../components';
 
 
 export default () => {
-    const [ username, setUsername ] = useState("");
-  const [ nameInput, setNameInput ] = useState("");
   const [ readsCount, setReadsCount ] = useState(0);
   const [ articles, setStories ] = useState([
     { id: 2503, headline: 'Disaster Strikes', snippet: 'It was a dark and stormy night...'},
@@ -24,13 +22,13 @@ export default () => {
   // Pass explicit arguments to event handlers
   const renderStories = () => articles.map(art => <li key={art.id} onClick={() => handleArticleSelect(art.id)}><FaveButton /> <strong role="heading" aria-label="headline">{art.headline}</strong> {art.snippet}</li>)
 
-  return(
+  return (
     <div className="news-reader">
       <h1>A Real State of Events</h1>
 
       <aside>
         {/* Conditional rendering example 1 */}
-       
+        <ReadCount />
 
         {/* Reading from state */}
         <p>There have been <span role="figure" id="reads">{readsCount}</span> reader(s)!</p>

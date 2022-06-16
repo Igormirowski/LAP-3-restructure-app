@@ -24,6 +24,10 @@ const ReadCount = () => {
   <label htmlFor="username">Username</label>
   <input type="text" id="username" name="username" placeholder="That's not my name!" value={nameInput} onChange={handleInput}/>
   <input type="submit" value="Update!"/>
-</form></>
+</form>
+</>
     )
 }
+
+
+export default ReadCount;
