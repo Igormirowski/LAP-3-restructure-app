@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaveButton } from '../../components'
+import { FaveButton } from '../../components';
 
 
 export default () => {
@@ -20,16 +20,7 @@ export default () => {
     setChosenArticle(chosenArticle);
   };
 
-  const handleInput = e => {
-    setNameInput(e.target.value)
-  };
-
-  const handleFormSubmit = e => {
-    e.preventDefault();
-    setUsername(nameInput);
-    setNameInput("");
-  };
-
+ 
   // Pass explicit arguments to event handlers
   const renderStories = () => articles.map(art => <li key={art.id} onClick={() => handleArticleSelect(art.id)}><FaveButton /> <strong role="heading" aria-label="headline">{art.headline}</strong> {art.snippet}</li>)
 
@@ -39,14 +30,7 @@ export default () => {
 
       <aside>
         {/* Conditional rendering example 1 */}
-        <h3 aria-label="greeting" id="greeting">Hi there, {username ? username : 'friend'}!</h3>
-
-        {/* Form handling */}
-        <form onSubmit={handleFormSubmit}>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" name="username" placeholder="That's not my name!" value={nameInput} onChange={handleInput}/>
-          <input type="submit" value="Update!"/>
-        </form>
+       
 
         {/* Reading from state */}
         <p>There have been <span role="figure" id="reads">{readsCount}</span> reader(s)!</p>
