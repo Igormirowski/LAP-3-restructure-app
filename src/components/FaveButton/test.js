@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 
-import FaveButton from './FaveButton';
+import FaveButton from './index.js';
 
 describe('FaveButton', () => {
     beforeEach(() => {

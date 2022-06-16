@@ -1,4 +1,11 @@
+# LAP 3 Practice Newsines 
+
+- clone repo -> cd into filder -> `npm install` -> `npm test ` (to check tests)
+
+
+
 # React Newsies
+
 
 ## How to use this repo
 This repo has multiple branches with a React app at various stages of completion.
