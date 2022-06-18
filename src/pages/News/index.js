@@ -30,7 +30,7 @@ export default () => {
         <Greeting />
 
         {/* Reading from state */}
-        <ReaderCount stories={articles} handleArticleSelect={handleArticleSelect} />
+        <ReaderCount />
        
       
         <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="newspapers"/>
@@ -38,7 +38,7 @@ export default () => {
 
       <section>
         {/* Tidy rendering */}
-        <ul> { <Headlines /> } </ul>
+       { <Headlines stories={articles} handleArticleSelect={handleArticleSelect} /> }
 
         {/* Conditional rendering example 2 */}
         { 

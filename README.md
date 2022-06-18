@@ -6,5 +6,10 @@ Practice to restructure the App.js into a few components
 - Goals was to put everything into small folders (break int small pieces )
 
 
-
+Structure: 
+Folders:
+- components/
+- layout/
+- pages/
+- tests/
 
