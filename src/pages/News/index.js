@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaveButton, FeaturedArticle, Greeting, ReaderCount } from '../../components';
+import { FaveButton, FeaturedArticle, Greeting, ReaderCount, Headlines } from '../../components';
 
 
 export default () => {
@@ -30,7 +30,7 @@ export default () => {
         <Greeting />
 
         {/* Reading from state */}
-        <ReaderCount />
+        <ReaderCount stories={articles} handleArticleSelect={handleArticleSelect} />
        
       
         <img src="https://images.unsplash.com/photo-1566378246598-5b11a0d486cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80" alt="newspapers"/>
@@ -38,7 +38,7 @@ export default () => {
 
       <section>
         {/* Tidy rendering */}
-        <ul> { renderStories() } </ul>
+        <ul> { <Headlines /> } </ul>
 
         {/* Conditional rendering example 2 */}
         { 
