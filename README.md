@@ -13,3 +13,5 @@ Folders:
 - pages/
 - tests/
 
+
+![layout folders](assets/pic1.png)
