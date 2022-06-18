@@ -1,6 +1,6 @@
 import React,  { useState } from 'react';
 
-const ReadCount = () => {
+const Greeting = () => {
     const [ username, setUsername ] = useState("");
     const [ nameInput, setNameInput ] = useState("");
 
@@ -30,4 +30,4 @@ const ReadCount = () => {
 }
 
 
-export default ReadCount;
+export default Greeting;
